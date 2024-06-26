@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Password Recovery</title>
+    <title>Recuperar Contraseña</title>
     <style>
         body {
-            background-image: url("background.jpg");
+            background-image: url("iconos/fondoweb.jpg");
             background-size: cover;
             background-position: center;
+            font-family: Arial, sans-serif;
         }
         .container {
             max-width: 400px;
@@ -41,14 +42,56 @@
         button:hover {
             background-color: #45a049;
         }
+        a {
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+        }
+        p {
+            text-align: center;
+            margin-top: 10px;
+        }
     </style>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDYOnv_kYwnTv_r0OHSNrHEvlCdi2WZX94",
+            authDomain: "ethosapp-4353b.firebaseapp.com",
+            projectId: "ethosapp-4353b",
+            storageBucket: "ethosapp-4353b.appspot.com",
+            messagingSenderId: "280180054610",
+            appId: "1:280180054610:web:0499a47a5fcbee64e85d8b",
+            measurementId: "G-1PYWCTPJ2K"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Function to handle password reset
+        function handlePasswordReset(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            firebase.auth().sendPasswordResetEmail(email)
+                .then(() => {
+                    alert('Email de recuperación enviado');
+                })
+                .catch((error) => {
+                    alert('Error: ' + error.message);
+                });
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <h1>Password Recovery</h1>
-        <form>
-            <input type="email" placeholder="Email" required>
-            <button type="submit">Recover Password</button>
+        <h1>Recuperación de Contraseña</h1>
+        <form onsubmit="handlePasswordReset(event)">
+            <input type="email" id="email" placeholder="Email" required>
+            <button type="submit">ENVIAR</button>
+            <a href="index.html">Iniciar sesión</a>
+            <p>¿Aún no tienes cuenta? <a href="registronutilogo.html">Regístrate</a></p>
         </form>
     </div>
 </body>
