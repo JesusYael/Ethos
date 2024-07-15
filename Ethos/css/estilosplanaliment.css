@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.left-column {
+    background-color: #007bff;
+    width: 250px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-column {
+    flex: 1;
+    background-image: url("../img/verduras.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-column img {
+    max-width: 50%;
+    /* La imagen se ajusta al ancho de la columna */
+    max-height: 50%;
+    /* La imagen se ajusta a la altura de la columna */
+}
+
+.btn-text {
+    color: white;
+}
+
+.btn-textcerrar {
+    text-align: right;
+    color: red;
+    margin-top: auto;
+    /* Push "Cerrar sesión" to the bottom */
+}
+
+#logo {
+    width: 140px;
+    height: 140px;
+    align-self: center;
+    margin-bottom: 20px;
+
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-items a {
+    margin-bottom: 10px;
+    /* Space between each menu item */
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+#exit {
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+#home {
+    font-size: 0.9em;
+}
+
+#home .material-symbols-outlined {
+    font-size: 0.8em;
+}
+
+.no-border .list-group-item {
+    border: none;
+    padding: 0.5rem 0.75rem;
+}

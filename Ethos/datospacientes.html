@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes Nuevos</title>
+
+    <!-- Estilos -->
+    <link href="css/pacientesnuevos.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="left-column col-md-2">
+                <a id="home" href="inicio.html" class="btn-text">
+                    <p><span class="material-symbols-outlined">home</span> Inicio</p>
+                </a>
+                <img id="logo" src="./img/logo.png" alt="Lotgo Ethos">
+                <div class="menu-items">
+                    <a href="perfil.html" class="btn-text">
+                        <h6><span class="material-symbols-outlined">account_circle</span> Perfil</h6>
+                    </a>
+                    <a href="planalimenticio.html" class="btn-text">
+                        <h6><span class="material-symbols-outlined">restaurant</span> Planes de alimentación</h6>
+                    </a>
+                    <a href="rutinaejercicio.html" class="btn-text">
+                        <h6><span class="material-symbols-outlined">fitness_center</span> Rutinas de ejercicio</h6>
+                    </a>
+                    <a href="chatinegrado.html" class="btn-text">
+                        <h6><span class="material-symbols-outlined">chat</span> Chat integrado</h6>
+                    </a>
+                </div>
+                <a href="" class="btn-textcerrar">
+                    <h6><span id="exit" class="material-symbols-outlined">logout</span>Cerrar sesión</h6>
+                </a>
+            </div>
+            <div class="right-column">
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                    <h2 class="mt-4">Pacientes Nuevos</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>
+                                        <h3>Nombre</h3>
+                                    </th>
+                                    <th>
+                                        <h3>Primera cita</h3>
+                                    </th>
+                                    <th>
+                                        <h3>Ver más</h3>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Dayana Hernandez</td>
+                                    <td>2024-06-21 09:30 AM</td>
+                                    <td><button class="btn btn-success btn-lg view-patient" data-name="Dayana Hernandez"
+                                            data-date="2024-06-21 09:30 AM">Ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Melisa Martínez</td>
+                                    <td>2024-06-22 10:00 AM</td>
+                                    <td><button class="btn btn-success btn-lg view-patient" data-name="Melisa Martínez"
+                                            data-date="2024-06-22 10:00 AM">Ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Diego Truqui</td>
+                                    <td>2024-06-23 11:00 AM</td>
+                                    <td><button class="btn btn-success btn-lg view-patient" data-name="Diego Truqui"
+                                            data-date="2024-06-23 11:00 AM">Ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Marta García</td>
+                                    <td>2024-06-24 12:00 PM</td>
+                                    <td><button class="btn btn-success btn-lg view-patient" data-name="Marta García"
+                                            data-date="2024-06-24 12:00 PM">Ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>José Pérez</td>
+                                    <td>2024-06-25 01:30 PM</td>
+                                    <td><button class="btn btn-success btn-lg view-patient" data-name="José Pérez"
+                                            data-date="2024-06-25 01:30 PM">Ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Antonio Ruiz</td>
+                                    <td>2024-06-26 02:15 PM</td>
+                                    <td><button class="btn btn-success btn-lg view-patient" data-name="Antonio Ruiz"
+                                            data-date="2024-06-26 02:15 PM">Ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Javier Sánchez</td>
+                                    <td>2024-06-27 09:45 AM</td>
+                                    <td><button class="btn btn-success btn-lg view-patient" data-name="Javier Sánchez"
+                                            data-date="2024-06-27 09:45 AM">Ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Elena Gutiérrez</td>
+                                    <td>2024-06-28 10:30 AM</td>
+                                    <td><button class="btn btn-success btn-lg view-patient" data-name="Elena Gutiérrez"
+                                            data-date="2024-06-28 10:30 AM">Ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Pablo Díaz</td>
+                                    <td>2024-06-29 11:45 AM</td>
+                                    <td><button class="btn btn-success btn-lg view-patient" data-name="Pablo Díaz"
+                                            data-date="2024-06-29 11:45 AM">Ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Sandra Torres</td>
+                                    <td>2024-06-30 01:00 PM</td>
+                                    <td><button class="btn btn-success btn-lg view-patient" data-name="Sandra Torres"
+                                            data-date="2024-06-30 01:00 PM">Ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Diego Ramírez</td>
+                                    <td>2024-07-01 02:45 PM</td>
+                                    <td><button class="btn btn-success btn-lg view-patient" data-name="Diego Ramírez"
+                                            data-date="2024-07-01 02:45 PM">Ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Sofía Castro</td>
+                                    <td>2024-07-02 03:30 PM</td>
+                                    <td><button class="btn btn-success btn-lg view-patient" data-name="Sofía Castro"
+                                            data-date="2024-07-02 03:30 PM">Ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Luisa Navarro</td>
+                                    <td>2024-07-03 09:15 AM</td>
+                                    <td><button class="btn btn-success btn-lg view-patient" data-name="Luisa Navarro"
+                                            data-date="2024-07-03 09:15 AM">Ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Marcos Fernández</td>
+                                    <td>2024-07-04 10:45 AM</td>
+                                    <td><button class="btn btn-success btn-lg view-patient" data-name="Marcos Fernández"
+                                            data-date="2024-07-04 10:45 AM">Ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Ana Rodríguez</td>
+                                    <td>2024-07-05 03:15 PM</td>
+                                    <td><button class="btn btn-success btn-lg view-patient" data-name="Ana Rodríguez"
+                                            data-date="2024-07-05 03:15 PM">Ir</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.view-patient').forEach(button => {
+            button.addEventListener('click', event => {
+                const name = event.currentTarget.getAttribute('data-name');
+                const date = event.currentTarget.getAttribute('data-date');
+                window.location.href = `paciente.html?name=${encodeURIComponent(name)}&date=${encodeURIComponent(date)}`;
+            });
+        });
+    </script>
+    <!-- Scripts de Bootstrap y otros -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

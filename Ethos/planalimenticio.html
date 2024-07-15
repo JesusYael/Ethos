@@ -1,0 +1,582 @@
+<!--Acomodar para que los botones manden ventanas modales-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan alimenticio</title>
+
+    <!--Estilos-->
+    <link href="css/estilosplanaliment.css" rel="stylesheet">
+
+    <!--boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!--Icons-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <div class="left-column">
+        <a id="home" href="inicio.html" class="btn-text">
+            <p><span class="material-symbols-outlined">
+                    home
+                </span> Inicio</p>
+        </a>
+        <img id="logo" src="./img/logo.png" alt="Lotgo Ethos">
+        <br />
+        <div class="menu-items">
+            <a href="perfil.html" class="btn-text">
+                <h6><span class="material-symbols-outlined">
+                        account_circle
+                    </span> Perfil</h6>
+            </a>
+            <br />
+            <a href="planalimenticio.html" class="btn-text">
+                <h6><span class="material-symbols-outlined">
+                        restaurant
+                    </span> Planes de alimentación</h6>
+            </a>
+            <br />
+            <a href="rutinaejercicio.html" class="btn-text">
+                <h6><span class="material-symbols-outlined">
+                        fitness_center
+                    </span> Rutinas de ejercicio</h6>
+            </a>
+            <br />
+            <a href="chatinegrado.html" class="btn-text">
+                <h6><span class="material-symbols-outlined">
+                        chat
+                    </span> Chat integrado</h6>
+            </a>
+        </div>
+        <a href="" class="btn-textcerrar">
+            <h6><span id="exit" class="material-symbols-outlined">
+                    logout</span>Cerrar sesión</h6>
+        </a>
+    </div>
+    <div class="right-column">
+        <div class="container-card">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Plan Alimenticio para Pérdida de Peso</h5>
+                            <p class="card-text">
+                            <ul class="list-group list-group-horizontal no-border">
+                                <li class="list-group-item">Desayuno</li>
+                            </ul>
+                            <ul class="list-group list-group-horizontal no-border">
+                                <li class="list-group-item">A media mañana</li>
+                            </ul>
+                            <ul class="list-group list-group-horizontal no-border">
+                                <li class="list-group-item">Almuerzo</li>
+                            </ul>
+                            </p>
+                            <a class="card-link" href="#" data-bs-toggle="modal" data-bs-target="#modalPerdidaPeso">Ver
+                                plan alimenticio</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Plan de Alimentación para Ganancia de Masa Muscular</h5>
+                            <p class="card-text">
+                            <ul class="list-group list-group-horizontal no-border">
+                                <li class="list-group-item">Desayuno</li>
+                            </ul>
+                            <ul class="list-group list-group-horizontal no-border">
+                                <li class="list-group-item">A media mañana</li>
+                            </ul>
+                            <ul class="list-group list-group-horizontal no-border">
+                                <li class="list-group-item">Almuerzo</li>
+                            </ul>
+                            </p>
+                            <a class="card-link" href="#" data-bs-toggle="modal" data-bs-target="#modalGananciaMasa">Ver
+                                plan alimenticio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Plan de Alimentación para Mantenimiento General</h5>
+                            <p class="card-text">
+                            <ul class="list-group list-group-horizontal no-border">
+                                <li class="list-group-item">Desayuno</li>
+                            </ul>
+                            <ul class="list-group list-group-horizontal no-border">
+                                <li class="list-group-item">A media mañana</li>
+                            </ul>
+                            <ul class="list-group list-group-horizontal no-border">
+                                <li class="list-group-item">Almuerzo</li>
+                            </ul>
+                            </p>
+                            <a class="card-link" href="#" data-bs-toggle="modal"
+                                data-bs-target="#modalMantenimientoGeneral">Ver
+                                plan alimenticio</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Plan Alimenticio para Energía y Rendimiento Deportivo
+                            </h5>
+                            <p class="card-text">
+                            <ul class="list-group list-group-horizontal no-border">
+                                <li class="list-group-item">Desayuno</li>
+                            </ul>
+                            <ul class="list-group list-group-horizontal no-border">
+                                <li class="list-group-item">A media mañana</li>
+                            </ul>
+                            <ul class="list-group list-group-horizontal no-border">
+                                <li class="list-group-item">Almuerzo</li>
+                            </ul>
+                            </p>
+                            <a class="card-link" href="#" data-bs-toggle="modal"
+                                data-bs-target="#modalEnergiayRendimiento">Ver
+                                plan alimenticio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para el Plan Alimenticio de Pérdida de Peso -->
+    <div class="modal fade" id="modalPerdidaPeso" tabindex="-1" aria-labelledby="modalPerdidaPesoLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="modalPerdidaPesoLabel">Plan Alimenticio para Pérdida de Peso
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center">Lunes</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Batido de proteínas con frutas y avena.
+                        <br>
+                        <strong>A media mañana:</strong> Un puñado de frutos secos (almendras, nueces).
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de quinoa con verduras y pollo a la plancha.
+                        <br>
+                        <strong>Merienda:</strong> Batido de proteínas con leche de almendras.
+                        <br>
+                        <strong>Cena:</strong> Filete de pescado al horno con espárragos.
+                    </p>
+                    <h6 class="text-center">Martes</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Yogur griego bajo en grasa con granola y frutos rojos.
+                        <br>
+                        <strong>A media mañana:</strong> Batido verde de espinacas, manzana y pepino.
+                        <br>
+                        <strong>Almuerzo:</strong> Salmón al horno con vegetales asados.
+                        <br>
+                        <strong>Merienda:</strong> Rodajas de manzana con mantequilla de almendra.
+                        <br>
+                        <strong>Cena:</strong> Sopa de verduras con tofu.
+                    </p>
+                    <h6 class="text-center">Miércoles</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Tostadas integrales con aguacate y huevo pochado.
+                        <br>
+                        <strong>A media mañana:</strong> Yogur natural con semillas de chía.
+                        <br>
+                        <strong>Almuerzo:</strong> Pechuga de pollo con brócoli al vapor.
+                        <br>
+                        <strong>Merienda:</strong> Batido de bayas con yogur griego.
+                        <br>
+                        <strong>Cena:</strong> Ensalada mixta con aguacate y aderezo ligero.
+                    </p>
+                    <h6 class="text-center">Jueves</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Batido de proteínas con leche de almendras.
+                        <br>
+                        <strong>A media mañana:</strong> Puñado de frutos secos (nueces, almendras).
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de atún con vegetales frescos.
+                        <br>
+                        <strong>Merienda:</strong> Rodajas de manzana con mantequilla de almendra.
+                        <br>
+                        <strong>Cena:</strong> Salmón al horno con espárragos.
+                    </p>
+                    <h6 class="text-center">Viernes</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Yogur griego con frutas y granola.
+                        <br>
+                        <strong>A media mañana:</strong> Batido verde de espinacas y manzana.
+                        <br>
+                        <strong>Almuerzo:</strong> Pollo a la plancha con ensalada mixta.
+                        <br>
+                        <strong>Merienda:</strong> Batido de proteínas con leche de almendras.
+                        <br>
+                        <strong>Cena:</strong> Filete de pescado al horno con espárragos.
+                    </p>
+                    <h6 class="text-center">Sábado</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Tostadas integrales con aguacate y huevo pochado.
+                        <br>
+                        <strong>A media mañana:</strong> Batido de proteínas con frutas y avena.
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de quinoa con vegetales y pollo a la plancha.
+                        <br>
+                        <strong>Merienda:</strong> Rodajas de manzana con mantequilla de almendra.
+                        <br>
+                        <strong>Cena:</strong> Salmón al horno con espárragos.
+                    </p>
+                    <h6 class="text-center">Domingo</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Batido de proteínas con frutas y avena.
+                        <br>
+                        <strong>A media mañana:</strong> Puñado de frutos secos (nueces, almendras).
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de pollo con verduras frescas.
+                        <br>
+                        <strong>Merienda:</strong> Rodajas de manzana con mantequilla de almendra.
+                        <br>
+                        <strong>Cena:</strong> Sopa de verduras con tofu.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para la plan alimenticio de Ganancia de masa muscular -->
+    <div class="modal fade" id="modalGananciaMasa" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalGananciaMasaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-center" id="modalGananciaMasaLabel">Plan Alimenticio para Ganancia
+                        de Masa
+                        Muscular</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center">Lunes</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Batido de proteínas con plátano y avena.
+                        <br>
+                        <strong>Media mañana:</strong> Yogur griego con almendras y miel.
+                        <br>
+                        <strong>Almuerzo:</strong> Pechuga de pollo a la parrilla con quinoa y vegetales al vapor.
+                        <br>
+                        <strong>Merienda:</strong> Batido de proteínas con leche y frutos secos.
+                        <br>
+                        <strong>Cena:</strong> Filete de salmón al horno con batata asada.
+                    </p>
+                    <h6 class="text-center">Martes</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Tostadas integrales con aguacate y huevo pochado.
+                        <br>
+                        <strong>Media mañana:</strong> Batido de proteínas con frutas y avena.
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de quinoa con lentejas y vegetales.
+                        <br>
+                        <strong>Merienda:</strong> Yogur griego con plátano y miel.
+                        <br>
+                        <strong>Cena:</strong> Pollo al curry con arroz integral.
+                    </p>
+                    <h6 class="text-center">Miércoles</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Batido de proteínas con espinacas y plátano.
+                        <br>
+                        <strong>Media mañana:</strong> Barra de proteínas y frutos secos.
+                        <br>
+                        <strong>Almuerzo:</strong> Ternera a la plancha con batata y brócoli al vapor.
+                        <br>
+                        <strong>Merienda:</strong> Batido de proteínas con leche y avena.
+                        <br>
+                        <strong>Cena:</strong> Salmón a la parrilla con ensalada mixta.
+                    </p>
+                    <h6 class="text-center">Jueves</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Yogur griego con granola y frutos rojos.
+                        <br>
+                        <strong>Media mañana:</strong> Batido de proteínas con leche y frutos secos.
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de quinoa con pollo a la parrilla y aguacate.
+                        <br>
+                        <strong>Merienda:</strong> Yogur griego con miel y almendras.
+                        <br>
+                        <strong>Cena:</strong> Filete de ternera con verduras asadas.
+                    </p>
+                    <h6 class="text-center">Viernes</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Batido de proteínas con plátano y espinacas.
+                        <br>
+                        <strong>Media mañana:</strong> Batido de proteínas con leche y avena.
+                        <br>
+                        <strong>Almuerzo:</strong> Pechuga de pollo al horno con quinoa y vegetales asados.
+                        <br>
+                        <strong>Merienda:</strong> Yogur griego con frutos secos y miel.
+                        <br>
+                        <strong>Cena:</strong> Salmón al horno con batata asada y espárragos.
+                    </p>
+                    <h6 class="text-center">Sábado</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Tostadas integrales con aguacate y huevo pochado.
+                        <br>
+                        <strong>Media mañana:</strong> Batido de proteínas con frutas y avena.
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de quinoa con pollo a la parrilla y vegetales.
+                        <br>
+                        <strong>Merienda:</strong> Yogur griego con plátano y almendras.
+                        <br>
+                        <strong>Cena:</strong> Salmón al horno con espárragos y batata.
+                    </p>
+                    <h6 class="text-center">Domingo</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Batido de proteínas con frutas y avena.
+                        <br>
+                        <strong>Media mañana:</strong> Barra de proteínas y frutos secos.
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de pollo con vegetales frescos.
+                        <br>
+                        <strong>Merienda:</strong> Yogur griego con almendras y miel.
+                        <br>
+                        <strong>Cena:</strong> Salmón al horno con espárragos y batata.
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para la plan alimenticio de Mantenimiento General -->
+    <div class="modal fade" id="modalMantenimientoGeneral" tabindex="-1"
+        aria-labelledby="modalMantenimientoGeneralLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="modalMantenimientoGeneralLabel">Plan Alimenticio de
+                        Mantenimiento
+                        General</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center">Lunes</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Yogur griego con frutas y granola.
+                        <br>
+                        <strong>A media mañana:</strong> Batido verde de espinacas, manzana y pepino.
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de quinoa con vegetales y pollo a la plancha.
+                        <br>
+                        <strong>Merienda:</strong> Rodajas de manzana con mantequilla de almendra.
+                        <br>
+                        <strong>Cena:</strong> Salmón al horno con espárragos.
+                    </p>
+                    <h6 class="text-center">Martes</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Batido de proteínas con leche de almendras.
+                        <br>
+                        <strong>A media mañana:</strong> Puñado de frutos secos (nueces, almendras).
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de atún con vegetales frescos.
+                        <br>
+                        <strong>Merienda:</strong> Rodajas de manzana con mantequilla de almendra.
+                        <br>
+                        <strong>Cena:</strong> Sopa de verduras con tofu.
+                    </p>
+                    <h6 class="text-center">Miércoles</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Tostadas integrales con aguacate y huevo pochado.
+                        <br>
+                        <strong>A media mañana:</strong> Yogur natural con semillas de chía.
+                        <br>
+                        <strong>Almuerzo:</strong> Pechuga de pollo con brócoli al vapor.
+                        <br>
+                        <strong>Merienda:</strong> Batido de bayas con yogur griego.
+                        <br>
+                        <strong>Cena:</strong> Ensalada mixta con aguacate y aderezo ligero.
+                    </p>
+                    <h6 class="text-center">Jueves</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Batido de proteínas con leche de almendras.
+                        <br>
+                        <strong>A media mañana:</strong> Puñado de frutos secos (nueces, almendras).
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de atún con vegetales frescos.
+                        <br>
+                        <strong>Merienda:</strong> Rodajas de manzana con mantequilla de almendra.
+                        <br>
+                        <strong>Cena:</strong> Salmón al horno con espárragos.
+                    </p>
+                    <h6 class="text-center">Viernes</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Yogur griego con frutas y granola.
+                        <br>
+                        <strong>A media mañana:</strong> Batido verde de espinacas, manzana y pepino.
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de quinoa con vegetales y pollo a la plancha.
+                        <br>
+                        <strong>Merienda:</strong> Rodajas de manzana con mantequilla de almendra.
+                        <br>
+                        <strong>Cena:</strong> Salmón al horno con espárragos.
+                    </p>
+                    <h6 class="text-center">Sábado</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Tostadas integrales con aguacate y huevo pochado.
+                        <br>
+                        <strong>A media mañana:</strong> Batido de proteínas con frutas y avena.
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de quinoa con vegetales y pollo a la plancha.
+                        <br>
+                        <strong>Merienda:</strong> Rodajas de manzana con mantequilla de almendra.
+                        <br>
+                        <strong>Cena:</strong> Salmón al horno con espárragos.
+                    </p>
+                    <h6 class="text-center">Domingo</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Yogur griego con frutas y granola.
+                        <br>
+                        <strong>A media mañana:</strong> Puñado de frutos secos (nueces, almendras).
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de pollo con vegetales frescos.
+                        <br>
+                        <strong>Merienda:</strong> Rodajas de manzana con mantequilla de almendra.
+                        <br>
+                        <strong>Cena:</strong> Sopa de verduras con tofu.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para la plan alimenticio para Energía y Rendimiento Deportivo-->
+    <div class="modal fade" id="modalEnergiayRendimiento" tabindex="-1" aria-labelledby="modalEnergiayRendimientoLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="modalEnergiayRendimientoLabel">Plan Alimenticio para Energía
+                        y
+                        Rendimiento Deportivo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center">Lunes</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Batido de proteínas con frutas y avena.
+                        <br>
+                        <strong>A media mañana:</strong> Yogur griego bajo en grasa con granola y frutos rojos.
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de quinoa con verduras y pollo a la plancha.
+                        <br>
+                        <strong>Merienda:</strong> Batido verde de espinacas, manzana y pepino.
+                        <br>
+                        <strong>Cena:</strong> Salmón al horno con espárragos.
+                    </p>
+                    <h6 class="text-center">Martes</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Tostadas integrales con aguacate y huevo pochado.
+                        <br>
+                        <strong>A media mañana:</strong> Batido de proteínas con leche de almendras.
+                        <br>
+                        <strong>Almuerzo:</strong> Pechuga de pollo a la plancha con ensalada mixta.
+                        <br>
+                        <strong>Merienda:</strong> Rodajas de manzana con mantequilla de almendra.
+                        <br>
+                        <strong>Cena:</strong> Filete de pescado al horno con espárragos.
+                    </p>
+                    <h6 class="text-center">Miércoles</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Batido de proteínas con leche de almendras.
+                        <br>
+                        <strong>A media mañana:</strong> Puñado de frutos secos (almendras, nueces).
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de quinoa con vegetales y salmón a la plancha.
+                        <br>
+                        <strong>Merienda:</strong> Yogur natural con semillas de chía.
+                        <br>
+                        <strong>Cena:</strong> Pollo al curry con arroz integral.
+                    </p>
+                    <h6 class="text-center">Jueves</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Batido verde de espinacas, piña y jengibre.
+                        <br>
+                        <strong>A media mañana:</strong> Batido de proteínas con plátano y leche de almendras.
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de pollo con aguacate y queso feta.
+                        <br>
+                        <strong>Merienda:</strong> Yogur griego bajo en grasa con frutas y granola.
+                        <br>
+                        <strong>Cena:</strong> Salmón al papillote con vegetales al vapor.
+                    </p>
+                    <h6 class="text-center">Viernes</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Omelette de claras de huevo con espinacas y queso cottage.
+                        <br>
+                        <strong>A media mañana:</strong> Batido de proteínas con leche de almendras.
+                        <br>
+                        <strong>Almuerzo:</strong> Filete de ternera a la plancha con batata asada.
+                        <br>
+                        <strong>Merienda:</strong> Rodajas de manzana con mantequilla de almendra.
+                        <br>
+                        <strong>Cena:</strong> Ensalada mixta con atún en conserva y vinagreta ligera.
+                    </p>
+                    <h6 class="text-center">Sábado</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Batido de proteínas con frutas y avena.
+                        <br>
+                        <strong>A media mañana:</strong> Puñado de frutos secos (nueces, almendras).
+                        <br>
+                        <strong>Almuerzo:</strong> Ensalada de quinoa con vegetales y pollo a la plancha.
+                        <br>
+                        <strong>Merienda:</strong> Yogur griego bajo en grasa con granola y frutos rojos.
+                        <br>
+                        <strong>Cena:</strong> Salmón al horno con espárragos.
+                    </p>
+                    <h6 class="text-center">Domingo</h6>
+                    <p>
+                        <strong>Desayuno:</strong> Tostadas integrales con aguacate y huevo pochado.
+                        <br>
+                        <strong>A media mañana:</strong> Batido de proteínas con leche de almendras.
+                        <br>
+                        <strong>Almuerzo:</strong> Pechuga de pollo a la plancha con ensalada mixta.
+                        <br>
+                        <strong>Merienda:</strong> Rodajas de manzana con mantequilla de almendra.
+                        <br>
+                        <strong>Cena:</strong> Filete de pescado al horno con espárragos.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="js/scriptplanaliment.js" "></script>
+</body>
+</html>
