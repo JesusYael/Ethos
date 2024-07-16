@@ -8,37 +8,69 @@ const firebaseConfig = {
     measurementId: "G-1PYWCTPJ2K"
 };
 
-// Inicializa Firebase
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-function validarFormulario() {
+const auth = firebase.auth();
+const db = firebase.firestore();
+const storage = firebase.storage();
+
+function validarFormulario(event) {
+    event.preventDefault();
+
     var nombre = document.getElementById('nombre').value;
     var apellidos = document.getElementById('apellidos').value;
-    var correo = document.getElementById('correo').value;
-    var contrasena = document.getElementById('contrasena').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
     var cedula = document.getElementById('cedula').value;
-    var cedulaFile = document.getElementById('formFileSm').value;
-    var fotoPerfil = document.getElementById('fotoPerfil').value;
+    var cedulaFile = document.getElementById('formFileCedula').files[0];
+    var fotoPerfil = document.getElementById('formFileFoto').files[0];
 
-    if (nombre.trim() === '' || apellidos.trim() === '' || correo.trim() === '' || contrasena.trim() === '' || cedula.trim() === '' || cedulaFile.trim() === '' || fotoPerfil.trim() === '') {
+    if (nombre.trim() === '' || apellidos.trim() === '' || email.trim() === '' || password.trim() === '' || cedula.trim() === '' || !cedulaFile || !fotoPerfil) {
         alert('Por favor completa todos los campos.');
         return false;
     }
 
-    // Crea un nuevo usuario en Firebase Authentication
-    firebase.auth().createUserWithEmailAndPassword(correo, contrasena)
+    auth.createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
             const user = userCredential.user;
             console.log("Usuario creado:", user);
 
+            const cedulaRef = storage.ref().child('Cedulas/' + cedulaFile.name);
+            const fotoPerfilRef = storage.ref().child('Fotos_perfil/' + fotoPerfil.name);
+
+            Promise.all([cedulaRef.put(cedulaFile), fotoPerfilRef.put(fotoPerfil)])
+                .then(([cedulaSnapshot, fotoPerfilSnapshot]) => {
+                    return Promise.all([cedulaSnapshot.ref.getDownloadURL(), fotoPerfilSnapshot.ref.getDownloadURL()]);
+                })
+                .then(([cedulaURL, fotoPerfilURL]) => {
+                    return db.collection('Nutriologos').doc(user.uid).set({
+                        nombre: nombre,
+                        apellidos: apellidos,
+                        email: email,
+                        cedula: cedula,
+                        cedulaURL: cedulaURL,
+                        fotoPerfilURL: fotoPerfilURL
+                    });
+                })
+                .then(() => {
+                    alert('Usuario registrado con éxito.');
+                })
+                .catch((error) => {
+                    console.error("Error al subir archivos o guardar en Firestore:", error);
+                    document.getElementById('error-message').textContent = "Error al registrarse: " + error.message;
+                    document.getElementById('error-message').style.display = "block";
+                });
         })
         .catch((error) => {
-
             const errorCode = error.code;
             const errorMessage = error.message;
             console.error("Error de creación de usuario:", errorCode, errorMessage);
 
-            // Muestra el mensaje de error al usuario
             document.getElementById('error-message').textContent = "Error al registrarse: " + errorMessage;
             document.getElementById('error-message').style.display = "block";
         });
+
+    return false;
 }
+
+document.getElementById('registroForm').addEventListener('submit', validarFormulario);
