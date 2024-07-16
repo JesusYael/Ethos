@@ -21,16 +21,14 @@
 </head>
 
 <body>
-    <div class="left-column">
-    </div>
+    <div class="left-column"></div>
     <div class="right-column">
         <div class="card mx-auto my-5" style="max-width: 600px;">
             <div class="card-title">
                 <h1 class="text-center">Registro de Nutriólogos</h1>
             </div>
             <div class="card-body">
-                
-                <form action="/submit_form" method="post" enctype="multipart/form-data">
+                <form id="registroForm" enctype="multipart/form-data">
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="nombre" class="form-label">Nombre:</label>
@@ -43,12 +41,12 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <label for="correo" class="form-label">Correo Electrónico:</label>
-                            <input type="email" id="correo" name="correo" class="form-control" required>
+                            <label for="email" class="form-label">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="contrasena" class="form-label">Contraseña:</label>
-                            <input type="password" id="contrasena" name="contrasena" class="form-control" required>
+                            <label for="password" class="form-label">Contraseña:</label>
+                            <input type="password" id="password" name="password" class="form-control" required>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -57,14 +55,14 @@
                             <input type="text" id="cedula" name="cedula" class="form-control" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="formFileSm" class="form-label">Subir Cédula:</label>
-                            <input class="form-control form-control-sm" id="formFileSm" type="file" required>
+                            <label for="formFileCedula" class="form-label">Subir Cédula:</label>
+                            <input class="form-control form-control-sm" id="formFileCedula" type="file" required>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <label for="cedula" class="form-label">Foto de perfil:</label>
-                            <input class="form-control form-control-sm" id="formFileSm" type="file" required>
+                            <label for="formFileFoto" class="form-label">Foto de perfil:</label>
+                            <input class="form-control form-control-sm" id="formFileFoto" type="file" required>
                         </div>
                     </div>
                     <div class="d-grid gap-2">
@@ -74,27 +72,25 @@
                         <a href="inicio_de_sesion.html" class="d-block">Iniciar sesión</a>
                         <a href="recuperarcontraseña.html" class="d-block">¿Olvidaste tu contraseña?</a>
                     </div>
+                    <div id="error-message" class="text-danger mt-3" style="display:none;"></div>
                 </form>
             </div>
         </div>
     </div>
-
-
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
+    <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
-    <script src="js/registronutriologo.js" "></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <!-- Custom JS -->
+    <script src="js/registronutriologo.js"></script>
 </body>
 
 </html>
