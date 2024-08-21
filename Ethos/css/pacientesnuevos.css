@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.left-column {
+    background-color: #007bff;
+    width: 250px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-column {
+    flex: 1;
+    background-image: url("../img/verduras.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.right-columnG img {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.btn-text {
+    color: white;
+}
+
+.btn-textcerrar {
+    text-align: right;
+    color: red;
+    margin-top: auto;
+    /* Push "Cerrar sesión" to the bottom */
+}
+
+#logo {
+    width: 140px;
+    height: 140px;
+    align-self: center;
+    margin-bottom: 20px;
+
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-items a {
+    margin-bottom: 10px;
+    /* Space between each menu item */
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+#exit {
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+#home {
+    font-size: 0.9em; /* Puedes ajustar este valor según necesites */
+}
+
+#home .material-symbols-outlined {
+    font-size: 0.8em; /* Ajusta también el tamaño del ícono si es necesario */
+}
+
+.border-bottom-only {
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+/* Hover en el pulgar */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.contenedor {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}

@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+}
+
+#left-columnG {
+    background-color: #007bff;
+    width: 250px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#right-columnG {
+    flex: 1;
+    background-image: url("../img/verduras.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+#right-columnG img {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.btn-text {
+    color: white;
+}
+
+.btn-textcerrar {
+    text-align: right;
+    color: red;
+    margin-top: auto;
+}
+
+#logo {
+    width: 140px;
+    height: 140px;
+    align-self: center;
+    margin-bottom: 20px;
+
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-items a {
+    margin-bottom: 10px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+#exit {
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+#home {
+    font-size: 0.9em;
+}
+
+#home .material-symbols-outlined {
+    font-size: 0.8em;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+#left-column,
+#right-column {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.profile-image,
+.cedula-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+#container {
+    background-color: white;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.contenedor {
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+#perfil-descripcion {
+    text-align: justify;
+}
+
+#cedulafoto {
+    width: 100px;
+    height: 100px;
+}
+
+#foto-perfil {
+    width: 150px;
+    height: 200px;
+    border-radius: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}

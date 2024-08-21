@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.left-column {
+    background-image: url("../img/logoinicio.JPG");
+    background-size: cover;
+    width: 350px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-column {
+    flex: 1;
+    background-image: url("../img/verdurasbyg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    text-align: center;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#google-login {
+    margin-bottom: 0; /* Elimina el margen inferior del botón de Google para que no haya espacio adicional */
+}
+
+a {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+
+}
+
+#btn{
+    background-color: #45a049;
+}

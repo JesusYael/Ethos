@@ -1,0 +1,548 @@
+<!--Acomodar para que los botones manden ventanas modales-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan alimenticio</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <!--Estilos-->
+    <link href="css/estilosplanaliment.css" rel="stylesheet">
+
+    <!--boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!--Icons-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <div class="left-column">
+        <a id="home" href="inicio.html" class="btn-text">
+            <p><span class="material-symbols-outlined">
+                    home
+                </span> Inicio</p>
+        </a>
+        <img id="logo" src="./img/logo.png" alt="Lotgo Ethos">
+        <br />
+        <div class="menu-items">
+            <a href="perfil.html" class="btn-text">
+                <h6><span class="material-symbols-outlined">
+                        account_circle
+                    </span> Perfil</h6>
+            </a>
+            <br />
+            <a href="planalimenticio.html" class="btn-text">
+                <h6><span class="material-symbols-outlined">
+                        restaurant
+                    </span> Planes de alimentación</h6>
+            </a>
+            <br />
+            <a href="rutinaejercicio.html" class="btn-text">
+                <h6><span class="material-symbols-outlined">
+                        fitness_center
+                    </span> Rutinas de ejercicio</h6>
+            </a>
+            <br />
+            <a href="chatinegrado.html" class="btn-text">
+                <h6><span class="material-symbols-outlined">
+                        chat
+                    </span> Chat integrado</h6>
+            </a>
+        </div>
+        <a href="inicio_de_sesion.html" class="btn-textcerrar" id="logoutBtn">
+            <h6><span id="exit" class="material-symbols-outlined">
+                    logout</span>Cerrar sesión</h6>
+        </a>
+    </div>
+    <div class="container-fluid right-column">
+        <div class="container-card">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Buscar paciente para ver/asignar plan alimenticio <span class="material-symbols-outlined">
+                                ramen_dining
+                                </span></h5>
+                            <p class="card-text">
+                            <div class="mb-3">
+                                <label for="Noexpafil" class="form-label">Numero de expediente (Noexpafil) del
+                                    paciente</label>
+                                <input type="text" class="form-control" id="Noexpafil" aria-describedby="NoexpafilHelp">
+                            </div>
+                            <button type="submit" class="btn btn-success"
+                                onclick="cargarPlanAlimenticio()" id="buscar-plan">Buscar</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="carddat" class="col-md-7">
+                    <div class="card" id="planalim">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h5 class="card-title">Plan Alimenticio de:</h5>
+                                    <h6 id="Nombredelplan" class="mb-0"></h6>
+                                </div>
+                                <button type="button" class="btn" data-bs-toggle="modal"
+                                data-bs-target="#editPlanPerdidadePeso">
+                                <p><span class="material-symbols-outlined">edit</span>Editar plan</p>
+                            </button>
+                            </div>
+                            <p class="card-text">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6 class="text-center">Lunes</h6>
+                                        <p id="desayuno-lunes"></p>
+                                        <p id="colacion-lunes"></p>
+                                        <p id="almuerzo-lunes"></p>
+                                        <p id="merienda-lunes"></p>
+                                        <p id="cena-lunes"></p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6 class="text-center">Martes</h6>
+                                        <p id="desayuno-martes"></p>
+                                        <p id="colacion-martes"></p>
+                                        <p id="almuerzo-martes"></p>
+                                        <p id="merienda-martes"></p>
+                                        <p id="cena-martes"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6 class="text-center">Miércoles</h6>
+                                        <p id="desayuno-miercoles"></p>
+                                        <p id="colacion-miercoles"></p>
+                                        <p id="almuerzo-miercoles"></p>
+                                        <p id="merienda-miercoles"></p>
+                                        <p id="cena-miercoles"></p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6 class="text-center">Jueves</h6>
+                                        <p id="desayuno-jueves"></p>
+                                        <p id="colacion-jueves"></p>
+                                        <p id="almuerzo-jueves"></p>
+                                        <p id="merienda-jueves"></p>
+                                        <p id="cena-jueves"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6 class="text-center">Viernes</h6>
+                                        <p id="desayuno-viernes"></p>
+                                        <p id="colacion-viernes"></p>
+                                        <p id="almuerzo-viernes"></p>
+                                        <p id="merienda-viernes"></p>
+                                        <p id="cena-viernes"></p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6 class="text-center">Sábado</h6>
+                                        <p id="desayuno-sabado"></p>
+                                        <p id="colacion-sabado"></p>
+                                        <p id="almuerzo-sabado"></p>
+                                        <p id="merienda-sabado"></p>
+                                        <p id="cena-sabado"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6 class="text-center">Domingo</h6>
+                                        <p id="desayuno-domingo"></p>
+                                        <p id="colacion-domingo"></p>
+                                        <p id="almuerzo-domingo"></p>
+                                        <p id="merienda-domingo"></p>
+                                        <p id="cena-domingo"></p>
+                                    </div>
+                                </div>
+                                
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal de edición-->
+
+    <!--Perdida de peso-->
+    <div class="modal fade" id="editPlanPerdidadePeso" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="editPlanPerdidadePesoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editPlanPerdidadePesoLabel">Edición de plan alimenticio de cada dia
+                        de la semana</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs" id="planPerdidaPesoTabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="lunes-tab" data-bs-toggle="tab" href="#lunes" role="tab"
+                                    aria-controls="lunes" aria-selected="true">Lunes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="martes-tab" data-bs-toggle="tab" href="#martes" role="tab"
+                                    aria-controls="martes" aria-selected="false">Martes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="miercoles-tab" data-bs-toggle="tab" href="#miercoles" role="tab"
+                                    aria-controls="miercoles" aria-selected="false">Miércoles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="jueves-tab" data-bs-toggle="tab" href="#jueves" role="tab"
+                                    aria-controls="jueves" aria-selected="false">Jueves</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="viernes-tab" data-bs-toggle="tab" href="#viernes" role="tab"
+                                    aria-controls="viernes" aria-selected="false">Viernes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="sabado-tab" data-bs-toggle="tab" href="#sabado" role="tab"
+                                    aria-controls="sabado" aria-selected="false">Sábado</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="domingo-tabPeso" data-bs-toggle="tab" href="#domingo" role="tab"
+                                    aria-controls="domingo" aria-selected="false">Domingo</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content" id="planPerdidaPesoContent">
+                            <!-- Lunes -->
+                            <div class="tab-pane fade show active" id="lunes" role="tabpanel"
+                                aria-labelledby="lunes-tab">
+                                <h5>Desayuno</h5>
+                                <label for="lunes-desayuno-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="lunes-desayuno-alimento"
+                                    name="lunes-desayuno-alimento" required><br>
+                                <label for="lunes-desayuno-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="lunes-desayuno-calorias"
+                                    name="lunes-desayuno-calorias" required><br>
+                                <h5>Primera Colación</h5>
+                                <label for="lunes-colacion-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="lunes-colacion-alimento"
+                                    name="lunes-colacion-alimento" required><br>
+                                <label for="lunes-colacion-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="lunes-colacion-calorias"
+                                    name="lunes-colacion-calorias" required><br>
+                                <h5>Almuerzo</h5>
+                                <label for="lunes-almuerzo-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="lunes-almuerzo-alimento"
+                                    name="lunes-almuerzo-alimento" required><br>
+                                <label for="lunes-almuerzo-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="lunes-almuerzo-calorias"
+                                    name="lunes-almuerzo-calorias" required><br>
+                                <h5>Merienda</h5>
+                                <label for="lunes-merienda-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="lunes-merienda-alimento"
+                                    name="lunes-merienda-alimento" required><br>
+                                <label for="lunes-merienda-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="lunes-merienda-calorias"
+                                    name="lunes-merienda-calorias" required><br>
+                                <h5>Cena</h5>
+                                <label for="lunes-cena-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="lunes-cena-alimento"
+                                    name="lunes-cena-alimento" required><br>
+                                <label for="lunes-cena-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="lunes-cena-calorias"
+                                    name="lunes-cena-calorias" required><br>
+                            </div>
+
+                            <!-- Martes -->
+                            <div class="tab-pane fade" id="martes" role="tabpanel" aria-labelledby="martes-tab">
+                                <!-- Repite la estructura para los demás días -->
+                                <h5>Desayuno</h5>
+                                <label for="martes-desayuno-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="martes-desayuno-alimento"
+                                    name="martes-desayuno-alimento" required><br>
+                                <label for="martes-desayuno-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="martes-desayuno-calorias"
+                                    name="martes-desayuno-calorias" required><br>
+
+                                <h5>Primera Colación</h5>
+                                <label for="martes-colacion-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="martes-colacion-alimento"
+                                    name="martes-colacion-alimento" required><br>
+                                <label for="martes-colacion-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="martes-colacion-calorias"
+                                    name="martes-colacion-calorias" required><br>
+
+                                <h5>Almuerzo</h5>
+                                <label for="martes-almuerzo-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="martes-almuerzo-alimento"
+                                    name="martes-almuerzo-alimento" required><br>
+                                <label for="martes-almuerzo-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="martes-almuerzo-calorias"
+                                    name="martes-almuerzo-calorias" required><br>
+
+                                <h5>Merienda</h5>
+                                <label for="martes-merienda-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="martes-merienda-alimento"
+                                    name="martes-merienda-alimento" required><br>
+                                <label for="martes-merienda-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="martes-merienda-calorias"
+                                    name="martes-merienda-calorias" required><br>
+
+                                <h5>Cena</h5>
+                                <label for="martes-cena-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="martes-cena-alimento"
+                                    name="martes-cena-alimento" required><br>
+                                <label for="martes-cena-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="martes-cena-calorias"
+                                    name="martes-cena-calorias" required><br>
+                            </div>
+
+                            <!-- Miercoles -->
+                            <div class="tab-pane fade" id="miercoles" role="tabpanel" aria-labelledby="miercoles-tab">
+                                <h5>Desayuno</h5>
+                                <label for="miercoles-desayuno-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="miercoles-desayuno-alimento"
+                                    name="miercoles-desayuno-alimento" required><br>
+                                <label for="miercoles-desayuno-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="miercoles-desayuno-calorias"
+                                    name="miercoles-desayuno-calorias" required><br>
+
+                                <h5>Primera Colación</h5>
+                                <label for="miercoles-colacion-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="miercoles-colacion-alimento"
+                                    name="miercoles-colacion-alimento" required><br>
+                                <label for="miercoles-colacion-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="miercoles-colacion-calorias"
+                                    name="miercoles-colacion-calorias" required><br>
+
+                                <h5>Almuerzo</h5>
+                                <label for="miercoles-almuerzo-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="miercoles-almuerzo-alimento"
+                                    name="miercoles-almuerzo-alimento" required><br>
+                                <label for="miercoles-almuerzo-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="miercoles-almuerzo-calorias"
+                                    name="miercoles-almuerzo-calorias" required><br>
+
+                                <h5>Merienda</h5>
+                                <label for="miercoles-merienda-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="miercoles-merienda-alimento"
+                                    name="miercoles-merienda-alimento" required><br>
+                                <label for="miercoles-merienda-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="miercoles-merienda-calorias"
+                                    name="miercoles-merienda-calorias" required><br>
+
+                                <h5>Cena</h5>
+                                <label for="miercoles-cena-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="miercoles-cena-alimento"
+                                    name="miercoles-cena-alimento" required><br>
+                                <label for="miercoles-cena-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="miercoles-cena-calorias"
+                                    name="miercoles-cena-calorias" required><br>
+                            </div>
+
+                            <!-- Jueves -->
+                            <div class="tab-pane fade" id="jueves" role="tabpanel" aria-labelledby="jueves-tab">
+                                <h5>Desayuno</h5>
+                                <label for="jueves-desayuno-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="jueves-desayuno-alimento"
+                                    name="jueves-desayuno-alimento" required><br>
+                                <label for="jueves-desayuno-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="jueves-desayuno-calorias"
+                                    name="jueves-desayuno-calorias" required><br>
+
+                                <h5>Primera Colación</h5>
+                                <label for="jueves-colacion-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="jueves-colacion-alimento"
+                                    name="jueves-colacion-alimento" required><br>
+                                <label for="jueves-colacion-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="jueves-colacion-calorias"
+                                    name="jueves-colacion-calorias" required><br>
+
+                                <h5>Almuerzo</h5>
+                                <label for="jueves-almuerzo-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="jueves-almuerzo-alimento"
+                                    name="jueves-almuerzo-alimento" required><br>
+                                <label for="jueves-almuerzo-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="jueves-almuerzo-calorias"
+                                    name="jueves-almuerzo-calorias" required><br>
+
+                                <h5>Merienda</h5>
+                                <label for="jueves-merienda-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="jueves-merienda-alimento"
+                                    name="jueves-merienda-alimento" required><br>
+                                <label for="jueves-merienda-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="jueves-merienda-calorias"
+                                    name="jueves-merienda-calorias" required><br>
+
+                                <h5>Cena</h5>
+                                <label for="jueves-cena-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="jueves-cena-alimento"
+                                    name="jueves-cena-alimento" required><br>
+                                <label for="jueves-cena-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="jueves-cena-calorias"
+                                    name="jueves-cena-calorias" required><br>
+                            </div>
+
+                            <!-- Viernes -->
+                            <div class="tab-pane fade" id="viernes" role="tabpanel" aria-labelledby="viernes-tab">
+                                <h5>Desayuno</h5>
+                                <label for="viernes-desayuno-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="viernes-desayuno-alimento"
+                                    name="viernes-desayuno-alimento" required><br>
+                                <label for="viernes-desayuno-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="viernes-desayuno-calorias"
+                                    name="viernes-desayuno-calorias" required><br>
+
+                                <h5>Primera Colación</h5>
+                                <label for="viernes-colacion-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="viernes-colacion-alimento"
+                                    name="viernes-colacion-alimento" required><br>
+                                <label for="viernes-colacion-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="viernes-colacion-calorias"
+                                    name="viernes-colacion-calorias" required><br>
+
+                                <h5>Almuerzo</h5>
+                                <label for="viernes-almuerzo-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="viernes-almuerzo-alimento"
+                                    name="viernes-almuerzo-alimento" required><br>
+                                <label for="viernes-almuerzo-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="viernes-almuerzo-calorias"
+                                    name="viernes-almuerzo-calorias" required><br>
+
+                                <h5>Merienda</h5>
+                                <label for="viernes-merienda-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="viernes-merienda-alimento"
+                                    name="viernes-merienda-alimento" required><br>
+                                <label for="viernes-merienda-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="viernes-merienda-calorias"
+                                    name="viernes-merienda-calorias" required><br>
+
+                                <h5>Cena</h5>
+                                <label for="viernes-cena-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="viernes-cena-alimento"
+                                    name="viernes-cena-alimento" required><br>
+                                <label for="viernes-cena-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="viernes-cena-calorias"
+                                    name="viernes-cena-calorias" required><br>
+                            </div>
+
+                            <!-- Sabado -->
+                            <div class="tab-pane fade" id="sabado" role="tabpanel" aria-labelledby="sabado-tab">
+                                <h5>Desayuno</h5>
+                                <label for="sabado-desayuno-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="sabado-desayuno-alimento"
+                                    name="sabado-desayuno-alimento" required><br>
+                                <label for="sabado-desayuno-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="sabado-desayuno-calorias"
+                                    name="sabado-desayuno-calorias" required><br>
+
+                                <h5>Primera Colación</h5>
+                                <label for="sabado-colacion-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="sabado-colacion-alimento"
+                                    name="sabado-colacion-alimento" required><br>
+                                <label for="sabado-colacion-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="sabado-colacion-calorias"
+                                    name="sabado-colacion-calorias" required><br>
+
+                                <h5>Almuerzo</h5>
+                                <label for="sabado-almuerzo-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="sabado-almuerzo-alimento"
+                                    name="sabado-almuerzo-alimento" required><br>
+                                <label for="sabado-almuerzo-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="sabado-almuerzo-calorias"
+                                    name="sabado-almuerzo-calorias" required><br>
+
+                                <h5>Merienda</h5>
+                                <label for="sabado-merienda-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="sabado-merienda-alimento"
+                                    name="sabado-merienda-alimento" required><br>
+                                <label for="sabado-merienda-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="sabado-merienda-calorias"
+                                    name="sabado-merienda-calorias" required><br>
+
+
+                                <h5>Cena</h5>
+                                <label for="sabado-cena-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="sabado-cena-alimento"
+                                    name="sabado-cena-alimento" required><br>
+                                <label for="sabado-cena-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="sabado-cena-calorias"
+                                    name="sabado-cena-calorias" required><br>
+                            </div>
+
+                            <!-- Domingo -->
+                            <div class="tab-pane fade" id="domingo" role="tabpanel" aria-labelledby="domingo-tab">
+                                <h5>Desayuno</h5>
+                                <label for="domingo-desayuno-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="domingo-desayuno-alimento"
+                                    name="domingo-desayuno-alimento" required><br>
+                                <label for="domingo-desayuno-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="domingo-desayuno-calorias"
+                                    name="domingo-desayuno-calorias" required><br>
+
+                                <h5>Primera Colación</h5>
+                                <label for="domingo-colacion-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="domingo-colacion-alimento"
+                                    name="domingo-colacion-alimento" required><br>
+                                <label for="domingo-colacion-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="domingo-colacion-calorias"
+                                    name="domingo-colacion-calorias" required><br>
+
+                                <h5>Almuerzo</h5>
+                                <label for="domingo-almuerzo-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="domingo-almuerzo-alimento"
+                                    name="domingo-almuerzo-alimento" required><br>
+                                <label for="domingo-almuerzo-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="domingo-almuerzo-calorias"
+                                    name="domingo-almuerzo-calorias" required><br>
+
+                                <h5>Merienda</h5>
+                                <label for="domingo-merienda-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="domingo-merienda-alimento"
+                                    name="domingo-merienda-alimento" required><br>
+                                <label for="domingo-merienda-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="domingo-merienda-calorias"
+                                    name="domingo-merienda-calorias" required><br>
+
+                                <h5>Cena</h5>
+                                <label for="domingo-cena-alimento">Alimento:</label>
+                                <input class="form-control" type="text" id="domingo-cena-alimento"
+                                    name="domingo-cena-alimento" required><br>
+                                <label for="domingo-cena-calorias">Calorías:</label>
+                                <input class="form-control" type="number" id="domingo-cena-calorias"
+                                    name="domingo-cena-calorias" required><br>
+
+                            </div>
+                            <button type="button" class="btn btn-secondary" id="guardar-plan-alimenticio-personalizado"
+                                disabled>Guardar
+                                Plan
+                                Alimenticio personalizado</button>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="js/scriptplanaliment.js"></script>
+</body>
+
+</html>
